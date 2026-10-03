@@ -65,7 +65,6 @@ const server = http.createServer(async (request, response) => {
         <p>Previous close: $${quote.previousClose}</p>
         <p>Day range: $${quote.dayLow} - $${quote.dayHigh}</p>
         <p>Volume: ${quote.volume}</p>
-        <button onclick="location.reload()">Refresh</button>
         
         <div style="max-width: 700px">
         <canvas id="chart"></canvas>
@@ -84,6 +83,8 @@ const server = http.createServer(async (request, response) => {
           },
         });
       </script>
+        <button onclick="location.reload()">Refresh</button>
+
         `);
     } catch (err) {
         response.writeHead(500, { "Content-Type": "text/plain" });
